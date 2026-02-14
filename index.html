@@ -15,6 +15,17 @@
 </head>
 
 <body class="is-preload">
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+    <script>
+        // Check for saved theme preference immediately to prevent flash
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
 
     <!-- Sidebar -->
     <div id="header">
@@ -291,8 +302,7 @@
                             <span class="exp-date">2024 – 2025</span>
                         </div>
                         <p class="exp-company">Ubisoft Montreal</p>
-                        <p>Developed and maintained production pipeline tools for game development workflows. Designed
-                            automation systems and internal tools to optimize studio-wide production processes.</p>
+                        <p>Tested and Supported production pipeline tools for game development.</p>
                     </div>
                     <div class="experience-item fade-in">
                         <div class="exp-header">
@@ -300,7 +310,7 @@
                             <span class="exp-date">2022 – 2024</span>
                         </div>
                         <p class="exp-company">DNEG</p>
-                        <p>Maintained and optimized production pipelines at the Academy Award-winning VFX studio. Built
+                        <p>Maintained and optimized production pipelines. Built
                             Python-based tooling for asset management, shot processing, and workflow automation across
                             multiple film projects.</p>
                     </div>
@@ -598,7 +608,34 @@
                 }
             });
         });
+
+        // Theme Toggle Logic
+        const toggleButton = document.getElementById('theme-toggle');
+        const icon = toggleButton.querySelector('i');
+        const html = document.documentElement;
+
+        // Initialize icon based on applied theme
+        if (html.getAttribute('data-theme') === 'light') {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        toggleButton.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
     </script>
+
 
 </body>
 
