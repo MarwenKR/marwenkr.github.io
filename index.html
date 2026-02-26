@@ -46,6 +46,7 @@
                     </li>
                     <li><a href="#experience" id="experience-link"><i class="fas fa-briefcase"></i> Experience</a></li>
                     <li><a href="#projects" id="projects-link"><i class="fas fa-code"></i> Projects</a></li>
+                    <li><a href="blog.html" id="blog-link"><i class="fas fa-blog"></i> Blog</a></li>
                     <li><a href="#contact" id="contact-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
@@ -600,11 +601,13 @@
         // Smooth scroll for navigation
         navLinks.forEach(link => {
             link.addEventListener('click', function (e) {
-                e.preventDefault();
                 const targetId = this.getAttribute('href');
-                const target = document.querySelector(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
             });
         });

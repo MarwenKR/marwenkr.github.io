@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Marwen Kraiem — Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description"
+        content="Marwen Kraiem's Blog — Thoughts and articles on Travel, Technical projects, and Drones.">
+    <meta name="keywords" content="Marwen Kraiem, blog, travel, technical, drones">
+    <meta name="author" content="Marwen Kraiem">
+    <link rel="icon" href="images/avatar.jpg">
+    <link rel="stylesheet" href="assets/css/academic.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <!-- Sidebar -->
+    <div id="header">
+        <div class="top">
+            <div id="logo">
+                <a href="index.html" style="border: none;"><span class="image avatar48"><img src="images/avatar.jpg"
+                            alt="Marwen Kraiem" /></span></a>
+                <h1 id="title">Marwen Kraiem</h1>
+                <p>Ph.D. Candidate</p>
+            </div>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html#about" id="about-link"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="index.html#research" id="research-link"><i class="fas fa-flask"></i> Research</a></li>
+                    <li><a href="index.html#publications" id="publications-link"><i class="fas fa-book"></i>
+                            Publications</a></li>
+                    <li><a href="index.html#news" id="news-link"><i class="fas fa-newspaper"></i> News</a></li>
+                    <li><a href="index.html#education" id="education-link"><i class="fas fa-graduation-cap"></i>
+                            Education</a></li>
+                    <li><a href="index.html#experience" id="experience-link"><i class="fas fa-briefcase"></i>
+                            Experience</a></li>
+                    <li><a href="index.html#projects" id="projects-link"><i class="fas fa-code"></i> Projects</a></li>
+                    <li><a href="#blog-header" id="blog-link" class="active"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="index.html#contact" id="contact-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main">
+
+        <!-- ===== Blog Header ===== -->
+        <section id="blog-header">
+            <div class="container">
+                <header>
+                    <h2>Blog</h2>
+                </header>
+                <p>Welcome to my blog! Here I share my articles, experiences, and projects across different areas.
+                    Select a category below to explore.</p>
+                <div class="skills-grid" style="margin-top: 2rem;">
+                    <div class="skill-category fade-in" style="cursor: pointer;"
+                        onclick="document.getElementById('travel').scrollIntoView({behavior: 'smooth'})">
+                        <h3 style="text-align: center;"><i class="fas fa-plane"></i> Travel</h3>
+                    </div>
+                    <div class="skill-category fade-in" style="cursor: pointer;"
+                        onclick="document.getElementById('technical').scrollIntoView({behavior: 'smooth'})">
+                        <h3 style="text-align: center;"><i class="fas fa-laptop-code"></i> Technical</h3>
+                    </div>
+                    <div class="skill-category fade-in" style="cursor: pointer;"
+                        onclick="document.getElementById('drones').scrollIntoView({behavior: 'smooth'})">
+                        <h3 style="text-align: center;"><i class="fas fa-helicopter"></i> Drones</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Travel ===== -->
+        <section id="travel">
+            <div class="container">
+                <header>
+                    <h3><i class="fas fa-plane"></i> Travel</h3>
+                </header>
+                <div class="projects-grid">
+                    <div class="project-card fade-in">
+                        <div class="project-info">
+                            <h4>Coming Soon</h4>
+                            <p>Travel stories and experiences will be published here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Technical ===== -->
+        <section id="technical">
+            <div class="container">
+                <header>
+                    <h3><i class="fas fa-laptop-code"></i> Technical</h3>
+                </header>
+                <div class="projects-grid">
+                    <div class="project-card fade-in">
+                        <div class="project-info">
+                            <h4>Coming Soon</h4>
+                            <p>Technical deep dives, tutorials, and project write-ups will be published here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Drones ===== -->
+        <section id="drones">
+            <div class="container">
+                <header>
+                    <h3><i class="fas fa-helicopter"></i> Drones</h3>
+                </header>
+                <div class="projects-grid">
+                    <div class="project-card fade-in">
+                        <div class="project-info">
+                            <h4>Coming Soon</h4>
+                            <p>Drone builds, flights, and reviews will be published here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <ul class="copyright">
+            <li>&copy; 2026 Marwen Kraiem</li>
+        </ul>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Remove preload class
+        window.addEventListener('load', function () {
+            document.body.classList.remove('is-preload');
+        });
+
+        // Scroll-triggered fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll for navigation
+        const navLinks = document.querySelectorAll('#nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // Theme Toggle Logic
+        const toggleButton = document.getElementById('theme-toggle');
+        const icon = toggleButton.querySelector('i');
+        const html = document.documentElement;
+
+        // Initialize icon based on applied theme
+        if (html.getAttribute('data-theme') === 'light') {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        toggleButton.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+    </script>
+</body>
+
+</html>
