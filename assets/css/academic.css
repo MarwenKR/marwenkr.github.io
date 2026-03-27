@@ -265,6 +265,10 @@ img {
     border-bottom: 1px solid var(--border-subtle);
 }
 
+#logo .logo-link {
+    border-bottom: none;
+}
+
 #logo .image.avatar48 {
     display: inline-block;
     margin-bottom: 1rem;
@@ -905,6 +909,11 @@ section + section::before {
     margin-bottom: 0.75rem;
 }
 
+.publication-abstract {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
 .publication-links {
     display: flex;
     gap: 0.5rem;
@@ -1113,6 +1122,19 @@ section + section::before {
 
 [data-theme="dark"] .skill-tag:hover {
     background: rgba(99, 102, 241, 0.1);
+}
+
+/* Blog category buttons */
+.blog-categories {
+    margin-top: 2rem;
+}
+
+.blog-category-btn {
+    cursor: pointer;
+}
+
+.blog-category-btn h3 {
+    text-align: center;
 }
 
 /* Tabs */
