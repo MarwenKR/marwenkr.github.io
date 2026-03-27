@@ -17,13 +17,13 @@
 <body class="is-preload">
     <!-- Theme Toggle -->
     <button id="theme-toggle" aria-label="Toggle theme">
-        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
     </button>
     <script>
         // Check for saved theme preference immediately to prevent flash
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
 
@@ -45,6 +45,8 @@
                     <li><a href="#education" id="education-link"><i class="fas fa-graduation-cap"></i> Education</a>
                     </li>
                     <li><a href="#experience" id="experience-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#skills" id="skills-link"><i class="fas fa-tools"></i> Skills</a></li>
+                    <li><a href="#certifications" id="certifications-link"><i class="fas fa-certificate"></i> Certifications</a></li>
                     <li><a href="#projects" id="projects-link"><i class="fas fa-code"></i> Projects</a></li>
                     <li><a href="blog.html" id="blog-link"><i class="fas fa-blog"></i> Blog</a></li>
                     <li><a href="#contact" id="contact-link"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -65,7 +67,7 @@
                     </div>
                     <div class="hero-text">
                         <p class="tagline">Ph.D. Candidate · ÉTS Montreal</p>
-                        <h1>Marwen Kraiem</h1>
+                        <h1><span id="typed-name"></span><span class="typing-cursor">|</span></h1>
                         <p class="subtitle">Reinforcement Learning · Operations Research · ML for Optimization</p>
                         <p class="bio">
                             I am a Ph.D. candidate at <a href="https://www.etsmtl.ca/">École de technologie supérieure
@@ -92,6 +94,24 @@
                             <a href="https://www.linkedin.com/in/marwen-kraiem/" class="hero-link"><i
                                     class="fab fa-linkedin"></i> LinkedIn</a>
 
+                        </div>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="2">0</span>
+                                <span class="stat-label">Publications</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="8">0</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="3">0</span>
+                                <span class="stat-label">Years Industry</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="3">0</span>
+                                <span class="stat-label">Degrees</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -334,44 +354,70 @@
                 <header>
                     <h2>Technical Expertise</h2>
                 </header>
-                <div class="skills-grid">
-                    <div class="skill-category fade-in">
-                        <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
-                        <div class="skill-items">
-                            <span class="skill-tag">Reinforcement Learning</span>
-                            <span class="skill-tag">Deep Learning</span>
-                            <span class="skill-tag">PyTorch</span>
-                            <span class="skill-tag">Scikit-learn</span>
+                <div class="tabs-container fade-in">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" data-tab="ml"><i class="fas fa-brain"></i> ML & AI</button>
+                        <button class="tab-btn" data-tab="prog"><i class="fas fa-code"></i> Programming</button>
+                        <button class="tab-btn" data-tab="math"><i class="fas fa-chart-line"></i> Optimization</button>
+                        <button class="tab-btn" data-tab="tools"><i class="fas fa-tools"></i> Tools</button>
+                    </div>
+                    <div class="tab-panels">
+                        <div class="tab-panel active" id="tab-ml">
+                            <div class="skill-items">
+                                <span class="skill-tag">Reinforcement Learning</span>
+                                <span class="skill-tag">Deep Learning</span>
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">Scikit-learn</span>
+                            </div>
+                        </div>
+                        <div class="tab-panel" id="tab-prog">
+                            <div class="skill-items">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">C++</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">MATLAB</span>
+                                <span class="skill-tag">SQL</span>
+                            </div>
+                        </div>
+                        <div class="tab-panel" id="tab-math">
+                            <div class="skill-items">
+                                <span class="skill-tag">Operations Research</span>
+                                <span class="skill-tag">Numerical Methods</span>
+                                <span class="skill-tag">Linear Algebra</span>
+                                <span class="skill-tag">Optimization</span>
+                            </div>
+                        </div>
+                        <div class="tab-panel" id="tab-tools">
+                            <div class="skill-items">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">LaTeX</span>
+                                <span class="skill-tag">CI/CD</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-category fade-in">
-                        <h3><i class="fas fa-code"></i> Programming</h3>
-                        <div class="skill-items">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">MATLAB</span>
-                            <span class="skill-tag">SQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category fade-in">
-                        <h3><i class="fas fa-chart-line"></i> Optimization & Math</h3>
-                        <div class="skill-items">
-                            <span class="skill-tag">Operations Research</span>
-                            <span class="skill-tag">Numerical Methods</span>
-                            <span class="skill-tag">Linear Algebra</span>
-                            <span class="skill-tag">Optimization</span>
+                </div>
+            </div>
+        </section>
 
+        <!-- ===== Certifications ===== -->
+        <section id="certifications">
+            <div class="container">
+                <header>
+                    <h2>Certifications</h2>
+                </header>
+                <div class="certifications-coming-soon fade-in">
+                    <div class="coming-soon-card">
+                        <div class="coming-soon-icon">
+                            <i class="fas fa-certificate"></i>
                         </div>
-                    </div>
-                    <div class="skill-category fade-in">
-                        <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
-                        <div class="skill-items">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Linux</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">LaTeX</span>
-                            <span class="skill-tag">CI/CD</span>
+                        <h3>Coming Soon</h3>
+                        <p>Professional certifications and credentials will be listed here.</p>
+                        <div class="coming-soon-decoration">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
                         </div>
                     </div>
                 </div>
@@ -395,9 +441,10 @@
                             </div>
                             <div class="project-info">
                                 <h4>Medical Image Segmentation with Deep Learning</h4>
-                                <p>Developed a 3D-UNet framework for lung cancer tumor segmentation from CT scans during
+                                <p class="project-desc">Developed a 3D-UNet framework for lung cancer tumor segmentation from CT scans during
                                     a Mitacs Globalink research internship at Université de Moncton (2019). Achieved
                                     92.1% sensitivity in tumor detection.</p>
+                                <button class="expand-btn">Read more</button>
                                 <div class="project-links">
                                     <a
                                         href="https://drive.google.com/file/d/1MyU6dtcH6H77YD2qk7Rz2cdUEQzadq81/view?usp=sharing"><i
@@ -411,9 +458,10 @@
                             </div>
                             <div class="project-info">
                                 <h4>Evolutionary Algorithms for Combinatorial Optimization</h4>
-                                <p>Implemented genetic algorithms for solving the Knapsack Problem, exploring
+                                <p class="project-desc">Implemented genetic algorithms for solving the Knapsack Problem, exploring
                                     evolutionary computation techniques including selection, crossover, and mutation
                                     operators.</p>
+                                <button class="expand-btn">Read more</button>
                                 <div class="project-links">
                                     <a href="https://github.com/MarwenKR/Knapsack-Problem"><i class="fab fa-github"></i>
                                         Code</a>
@@ -433,9 +481,10 @@
                             </div>
                             <div class="project-info">
                                 <h4>Ray Tracer from Scratch</h4>
-                                <p>Personal exploration of ray tracing fundamentals through a C++ implementation
+                                <p class="project-desc">Personal exploration of ray tracing fundamentals through a C++ implementation
                                     following Peter Shirley's Rendering series. Features CPU-based rendering with
                                     multiple material types.</p>
+                                <button class="expand-btn">Read more</button>
                                 <div class="project-links">
                                     <a href="https://github.com/MarwenKR/Raytracer"><i class="fab fa-github"></i>
                                         Code</a>
@@ -448,8 +497,9 @@
                             </div>
                             <div class="project-info">
                                 <h4>Advanced Ray Tracing Renderer</h4>
-                                <p>CPU-based ray tracing renderer in Java with OpenGL integration. Features geometric
+                                <p class="project-desc">CPU-based ray tracing renderer in Java with OpenGL integration. Features geometric
                                     primitive intersection, anti-aliasing, depth of field, and texture mapping.</p>
+                                <button class="expand-btn">Read more</button>
                                 <div class="project-links">
                                     <a href="https://github.com/MarwenKR/Projects/tree/main/Ray%20traycing"><i
                                             class="fab fa-github"></i> Code</a>
@@ -462,9 +512,10 @@
                             </div>
                             <div class="project-info">
                                 <h4>Physics-Based Character Animation</h4>
-                                <p>Physics-based animation system using Proportional-Derivative (PD) controllers.
+                                <p class="project-desc">Physics-based animation system using Proportional-Derivative (PD) controllers.
                                     Simulates a skeletal puppet suspended by virtual marionette strings in Java/OpenGL.
                                 </p>
+                                <button class="expand-btn">Read more</button>
                                 <div class="project-links">
                                     <a href="https://github.com/MarwenKR/Projects/tree/main/Charachter%20animation"><i
                                             class="fab fa-github"></i> Code</a>
@@ -477,8 +528,9 @@
                             </div>
                             <div class="project-info">
                                 <h4>Finite Element Method Simulation</h4>
-                                <p>2D finite element method simulation for deformable bodies with implicit backward
+                                <p class="project-desc">2D finite element method simulation for deformable bodies with implicit backward
                                     Euler time integration for numerical stability.</p>
+                                <button class="expand-btn">Read more</button>
                                 <div class="project-links">
                                     <a href="https://github.com/MarwenKR/Projects/tree/main/Fraction"><i
                                             class="fab fa-github"></i> Code</a>
@@ -498,8 +550,9 @@
                             </div>
                             <div class="project-info">
                                 <h4>Smart Irrigation System</h4>
-                                <p>IoT-based smart irrigation system using temperature, humidity, and luminosity
+                                <p class="project-desc">IoT-based smart irrigation system using temperature, humidity, and luminosity
                                     sensors. Implemented in C on an STM32F302R8 microcontroller.</p>
+                                <button class="expand-btn">Read more</button>
                                 <div class="project-links">
                                     <a href="https://github.com/MarwenKR/Irrigation-system"><i
                                             class="fab fa-github"></i> Code</a>
@@ -549,6 +602,9 @@
 
     </div>
 
+    <!-- Scroll to Top -->
+    <button id="scroll-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
     <!-- Footer -->
     <div id="footer">
         <ul class="copyright">
@@ -576,6 +632,42 @@
         });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Timeline draw animation
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.timeline').forEach(el => timelineObserver.observe(el));
+
+        // Animated stat counters
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.dataset.target);
+                        const duration = 1500;
+                        const start = performance.now();
+                        function update(now) {
+                            const elapsed = now - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            counter.textContent = Math.round(eased * target);
+                            if (progress < 1) requestAnimationFrame(update);
+                        }
+                        requestAnimationFrame(update);
+                    });
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stats-row').forEach(el => counterObserver.observe(el));
 
         // Active navigation highlighting
         const sections = document.querySelectorAll('section[id]');
@@ -612,30 +704,103 @@
             });
         });
 
-        // Theme Toggle Logic
+        // Theme Toggle Logic (light is default)
         const toggleButton = document.getElementById('theme-toggle');
         const icon = toggleButton.querySelector('i');
         const html = document.documentElement;
 
         // Initialize icon based on applied theme
-        if (html.getAttribute('data-theme') === 'light') {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
+        if (html.getAttribute('data-theme') === 'dark') {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
         }
 
         toggleButton.addEventListener('click', () => {
             const currentTheme = html.getAttribute('data-theme');
-            if (currentTheme === 'light') {
+            if (currentTheme === 'dark') {
                 html.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'dark');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
-                html.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
             }
+        });
+
+        // Typing animation
+        function typeWriter(element, text, speed, callback) {
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else if (callback) {
+                    callback();
+                }
+            }
+            type();
+        }
+
+        window.addEventListener('load', function () {
+            const typed = document.getElementById('typed-name');
+            if (typed) {
+                setTimeout(() => typeWriter(typed, 'Marwen Kraiem', 90, () => {
+                    document.querySelector('.typing-cursor').classList.add('done');
+                }), 500);
+            }
+        });
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const tabId = this.dataset.tab;
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('tab-' + tabId).classList.add('active');
+            });
+        });
+
+        // Project card expand/collapse
+        document.querySelectorAll('.expand-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const card = this.closest('.project-card');
+                card.classList.toggle('expanded');
+                this.textContent = card.classList.contains('expanded') ? 'Show less' : 'Read more';
+            });
+        });
+
+        // Parallax on hero photo
+        let ticking = false;
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                requestAnimationFrame(function () {
+                    const scrollY = window.scrollY;
+                    const hero = document.querySelector('.hero-photo img');
+                    if (hero && scrollY < 800) {
+                        hero.style.transform = 'translateY(' + (scrollY * 0.08) + 'px)';
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 600) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 
