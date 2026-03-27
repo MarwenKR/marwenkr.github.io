@@ -16,12 +16,12 @@
 <body class="is-preload">
     <!-- Theme Toggle -->
     <button id="theme-toggle" aria-label="Toggle theme">
-        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
     </button>
     <script>
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
 
@@ -46,6 +46,8 @@
                             Education</a></li>
                     <li><a href="index.html#experience" id="experience-link"><i class="fas fa-briefcase"></i>
                             Experience</a></li>
+                    <li><a href="index.html#skills" id="skills-link"><i class="fas fa-tools"></i> Skills</a></li>
+                    <li><a href="index.html#certifications" id="certifications-link"><i class="fas fa-certificate"></i> Certifications</a></li>
                     <li><a href="index.html#projects" id="projects-link"><i class="fas fa-code"></i> Projects</a></li>
                     <li><a href="#blog-header" id="blog-link" class="active"><i class="fas fa-blog"></i> Blog</a></li>
                     <li><a href="index.html#contact" id="contact-link"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -178,29 +180,29 @@
             });
         });
 
-        // Theme Toggle Logic
+        // Theme Toggle Logic (light is default)
         const toggleButton = document.getElementById('theme-toggle');
         const icon = toggleButton.querySelector('i');
         const html = document.documentElement;
 
         // Initialize icon based on applied theme
-        if (html.getAttribute('data-theme') === 'light') {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
+        if (html.getAttribute('data-theme') === 'dark') {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
         }
 
         toggleButton.addEventListener('click', () => {
             const currentTheme = html.getAttribute('data-theme');
-            if (currentTheme === 'light') {
+            if (currentTheme === 'dark') {
                 html.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'dark');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
-                html.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
             }
         });
     </script>
