@@ -1124,18 +1124,6 @@ section + section::before {
     background: rgba(20, 184, 166, 0.1);
 }
 
-/* Blog category buttons */
-.blog-categories {
-    margin-top: 2rem;
-}
-
-.blog-category-btn {
-    cursor: pointer;
-}
-
-.blog-category-btn h3 {
-    text-align: center;
-}
 
 /* Tabs */
 .tabs-container {
@@ -1242,85 +1230,6 @@ section + section::before {
     background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
     border-radius: 3px;
     transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* ========================================
-   Certifications
-   ======================================== */
-.certifications-coming-soon {
-    display: flex;
-    justify-content: center;
-    padding: 2rem 0;
-}
-
-.coming-soon-card {
-    text-align: center;
-    max-width: 400px;
-    padding: 3rem 2rem;
-    background: var(--bg-card);
-    border: 2px dashed var(--border-accent);
-    border-radius: 16px;
-    transition: all var(--transition-smooth);
-}
-
-.coming-soon-card:hover {
-    border-color: var(--accent-primary);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.coming-soon-icon {
-    font-size: 2.5rem;
-    color: var(--accent-warm);
-    margin-bottom: 1.25rem;
-    animation: gentlePulse 3s ease-in-out infinite;
-}
-
-@keyframes gentlePulse {
-    0%, 100% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.05); opacity: 1; }
-}
-
-.coming-soon-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--text-primary);
-    margin-bottom: 0.75rem;
-}
-
-.coming-soon-card p {
-    font-size: 0.9rem;
-    color: var(--text-tertiary);
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.coming-soon-decoration {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-}
-
-.coming-soon-decoration .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent-warm);
-    opacity: 0.4;
-    animation: dotPulse 1.5s ease-in-out infinite;
-}
-
-.coming-soon-decoration .dot:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.coming-soon-decoration .dot:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-@keyframes dotPulse {
-    0%, 100% { opacity: 0.3; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1); }
 }
 
 /* ========================================
